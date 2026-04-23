@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qaoa-maxcut-presentation"
+version = "0.1.0"
+description = "QAOA for MaxCut scaling study — BBL540E course presentation (ITU)"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Yurutken Ozgun" }]
+license = { text = "MIT" }
+keywords = ["qaoa", "maxcut", "qiskit", "quantum-computing", "variational"]
+
+dependencies = [
+    "qiskit==2.4.0",
+    "qiskit-aer",
+    "qiskit-optimization",
+    "qiskit-algorithms",
+    "networkx>=3.0",
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "matplotlib>=3.7",
+    "pandas>=2.0",
+    "pyyaml>=6.0",
+    "pylatexenc>=2.10",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "jupyter>=1.0",
+    "ipykernel>=6.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-v --tb=short"

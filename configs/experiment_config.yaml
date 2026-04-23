@@ -1,0 +1,35 @@
+# Experiment configuration — QAOA MaxCut scaling study
+# N = 3 is handled specially as K3 (2-regular triangle).
+# N >= 4 must be even (3-regular graphs require n*3/2 integer edges).
+
+graph_sizes: [3, 4, 6, 8, 10]
+optional_sizes: [12]
+
+p_values: [1, 2, 3]
+
+seeds: [0, 1, 2, 3, 4]
+
+optimizer:
+  method: "COBYLA"
+  tol: 1.0e-6
+  max_iter: 200
+
+grid_search:
+  # 2D grid resolution for p=1 warm start (gamma x beta)
+  p1_grid_size: 50
+  # Smaller grid used when adding each new layer (p>1)
+  layer_grid_size: 10
+
+output:
+  data_dir: "results/data"
+  figure_dir: "results/figures"
+  save_format: ["csv", "json"]
+
+# Matplotlib style shared across figures
+plot:
+  colors:
+    p1: "#2E86AB"
+    p2: "#A23B72"
+    p3: "#F18F01"
+  dpi: 300
+  font_size: 12
