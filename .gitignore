@@ -51,3 +51,11 @@ presentation/*.vrb
 
 # Env
 .env
+
+# Local-only working documents (planning, briefs, logs, notes — not for publication)
+/Claude_Code_Brief_QAOA_Implementation.md
+/QAOA_Project_Plan_v3.md
+/docs/IMPLEMENTATION_LOG.md
+/docs/Module_8_Brief_Slides_and_Speaker_Notes.md
+/docs/presentation_rules_point_criterias.md
+/docs/speaker_notes.md
